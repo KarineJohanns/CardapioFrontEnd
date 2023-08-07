@@ -1,20 +1,21 @@
+import { useState } from 'react';
 import './App.css';
-import Card from './components/Card/Card';
+import Button from './components/Button/Button';
+import Cardapio from './components/Cardapio/Cardapio';
 
 function App() {
+	const [isModalOpen, setIsModalOpen] = useState(false);
+
+	const handleOpenModal = () => {
+		setIsModalOpen((prev) => !prev);
+	};
 	return (
 		<>
 			<div className='container'>
 				<h1 className='mainTitle'>Cardápio</h1>
-				<div className='card-grid'>
-					<Card />
-					<Card />
-					<Card />
-					<Card />
-					<Card />
-					<Card />
-				</div>
+				<Cardapio />
 			</div>
+			<Button>Novo</Button>
 		</>
 	);
 }

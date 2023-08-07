@@ -46,6 +46,7 @@
 
 .cardInformation p {
 	font-size: 12px;
+	text-align: justify;
 	padding: 1rem 0;
 	height: 120px;
 	color: #8a8a8a;
