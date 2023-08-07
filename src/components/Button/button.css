@@ -1,0 +1,16 @@
+button {
+	color: #ffffff;
+	background-color: #01aa13;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 4px;
+	width: 100%;
+}
+
+button:first-child {
+	margin-right: 0.5rem;
+}
+
+button:not(:first-child) {
+	margin-right: 0;
+}
