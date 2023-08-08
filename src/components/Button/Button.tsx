@@ -8,10 +8,11 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const Button: React.FC<ButtonProps> = ({
 	children,
 	customClassName,
+	onClick,
 	...rest
 }) => {
 	return (
-		<button className={customClassName} {...rest}>
+		<button className={customClassName} onClick={onClick} {...rest}>
 			{children}
 		</button>
 	);

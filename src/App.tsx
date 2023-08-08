@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Button from './components/Button/Button';
 import Cardapio from './components/Cardapio/Cardapio';
+import Modal from './components/Modal/Modal';
 
 function App() {
 	const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,7 +16,10 @@ function App() {
 				<h1 className='mainTitle'>Cardápio</h1>
 				<Cardapio />
 			</div>
-			<Button>Novo</Button>
+			<Button className='btnNew' onClick={() => handleOpenModal()}>
+				Novo
+			</Button>
+			{isModalOpen && <Modal onClose={handleOpenModal} />}
 		</>
 	);
 }

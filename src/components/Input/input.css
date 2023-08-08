@@ -1,0 +1,23 @@
+.input-container {
+	margin-bottom: 10px;
+}
+
+.input-container label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+input {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	transition: border-color 0.3s ease;
+}
+
+input:focus {
+	border-color: #01aa13; /* Cor da borda ao focar */
+	outline: none; /* Remove o contorno padrão ao focar */
+	box-shadow: 0 0 0 2px rgba(1, 170, 19, 0.3); /* Adiciona uma sombra ao redor do input */
+}
