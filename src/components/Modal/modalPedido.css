@@ -1,0 +1,48 @@
+.dadosPedido,
+.detalhesPedido,
+.iconText {
+	display: flex;
+}
+.detalhesWrapper {
+	margin-bottom: 2rem;
+}
+.detalhesWrapper > * {
+	margin-bottom: 1rem;
+}
+.detalhesWrapper .iconText .icon {
+	color: var(--green-main);
+}
+.iconText {
+	margin-left: 1rem;
+}
+.detalhesWrapper p {
+	margin-left: 1rem;
+	font-size: 14px;
+}
+.detalhesPedido {
+	justify-content: space-between;
+}
+
+.pedido-table {
+	border-spacing: 0 1rem;
+}
+
+.pedido-table th,
+.pedido-table td {
+	padding: 0.5rem;
+	font-size: 14px;
+}
+
+.statusPedido {
+	text-align: end;
+}
+.custom-select {
+	width: 150px;
+	text-align: center;
+}
+.btnPrint {
+	text-align: center;
+}
+.iconPrinter {
+	margin-right: 1rem;
+}

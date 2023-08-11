@@ -1,0 +1,106 @@
+.category {
+	border-bottom: 1px solid var(--shadow-black);
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 10px;
+	border: 1px solid var(--grey-light);
+	border-radius: 8px;
+	margin: 10px;
+	padding: 10px;
+	overflow: hidden;
+}
+
+.category-header {
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
+}
+.seta {
+	font-size: 2rem;
+	transition: transform 0.3s ease;
+	transform-origin: center;
+	color: var(--green-main);
+}
+.seta.aberta {
+	transform: rotate(90deg);
+}
+
+.category h2 {
+	display: flex;
+	justify-content: center;
+	padding: 1rem 0;
+}
+
+.card-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-items: center;
+	align-items: center;
+	gap: 2rem;
+	padding: 1rem 0;
+}
+
+.card-grid .visible {
+	display: block;
+}
+
+.produtos {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	transition:
+		max-height 0.3s ease,
+		opacity 0.3s ease; /* Adicione essa linha */
+	max-height: 0;
+	opacity: 0;
+}
+
+.produtos.visible {
+	max-height: 1000px; /* Ajuste este valor para um valor suficientemente grande */
+	opacity: 1;
+}
+
+/* Estilos de entrada */
+.produtos-enter {
+	max-height: 0;
+	opacity: 0;
+	overflow: hidden;
+}
+
+.produtos-enter-active {
+	max-height: 1000px; /* Defina uma altura máxima que seja maior que a possível altura dos produtos */
+	opacity: 1;
+	transition:
+		max-height 300ms ease,
+		opacity 300ms ease;
+}
+
+/* Estilos de saída */
+.produtos-exit {
+	max-height: 1000px;
+	opacity: 1;
+	overflow: hidden;
+}
+
+.produtos-exit-active {
+	max-height: 0;
+	opacity: 0;
+	transition:
+		max-height 300ms ease,
+		opacity 300ms ease;
+}
+
+/* Estilos para telas médias */
+@media (max-width: 768px) {
+	.card-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Estilos para telas pequenas */
+@media (max-width: 480px) {
+	.card-grid {
+		grid-template-columns: 1fr;
+	}
+}

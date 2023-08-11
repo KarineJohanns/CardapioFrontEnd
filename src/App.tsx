@@ -1,27 +1,60 @@
-import { useState } from 'react';
+import React from 'react';
+import {
+	BrowserRouter as Router,
+	Route,
+	Routes,
+	NavLink,
+	useNavigate,
+} from 'react-router-dom'; // Importe o componente Link
+import Produtos from './components/Produtos/Produtos';
+import Pedidos from './components/Pedidos/Pedidos';
 import './App.css';
-import Button from './components/Button/Button';
-import Cardapio from './components/Cardapio/Cardapio';
-import Modal from './components/Modal/Modal';
 
 function App() {
-	const [isModalOpen, setIsModalOpen] = useState(false);
-
-	const handleOpenModal = () => {
-		setIsModalOpen((prev) => !prev);
-	};
 	return (
 		<>
-			<div className='container'>
-				<h1 className='mainTitle'>Cardápio</h1>
-				<Cardapio />
-			</div>
-			<Button className='btnNew' onClick={() => handleOpenModal()}>
-				Novo
-			</Button>
-			{isModalOpen && <Modal onClose={handleOpenModal} />}
+			<Router>
+				<div className='container'>
+					<h1 className='mainTitle'>Cardápio</h1>
+					<nav>
+						<ul className='tab-navigation'>
+							<li>
+								<NavLink to='/pedidos' className='tab-link'>
+									Pedidos
+								</NavLink>
+							</li>
+							<li>
+								<NavLink to='/produtos' className='tab-link'>
+									Produtos
+								</NavLink>
+							</li>
+						</ul>
+					</nav>
+
+					<Routes>
+						<Route path='/produtos' element={<Produtos />} />
+						<Route path='/pedidos' element={<Pedidos />} />
+						{/* Página inicial */}
+						<Route index element={<RedirectToPedidos />} />
+					</Routes>
+				</div>
+			</Router>
 		</>
 	);
+}
+
+function RedirectToPedidos() {
+	return <RouteRenderRedirect to='/pedidos' />;
+}
+
+// Função de redirecionamento para ser usada como renderização condicional
+function RouteRenderRedirect({ to }) {
+	const navigate = useNavigate();
+	React.useEffect(() => {
+		navigate(to);
+	}, [navigate, to]);
+
+	return null;
 }
 
 export default App;

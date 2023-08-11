@@ -5,7 +5,7 @@
 	justify-content: center;
 	width: 250px;
 	border-radius: 20px;
-	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	box-shadow: var(--shadow-black) 0px 7px 29px 0px;
 	padding: 0m;
 }
 .card .cardImage {
@@ -22,7 +22,7 @@
 
 .cardInformation {
 	border-radius: 20px 20px;
-	background-color: #ffffff;
+	background-color: var(--white);
 	width: 250px;
 	height: 200px;
 	position: relative;
@@ -34,7 +34,7 @@
 	font-size: 2rem;
 }
 .cardInformation .information h4 span {
-	color: #01aa13;
+	color: var(--green-main);
 	font-weight: bold;
 }
 
@@ -49,7 +49,7 @@
 	text-align: justify;
 	padding: 1rem 0;
 	height: 120px;
-	color: #8a8a8a;
+	color: var(--grey-medium);
 }
 
 .cardInformation .buttons {

@@ -1,0 +1,18 @@
+.pedidosList {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+}
+
+.pendentes,
+.confirmados,
+.enviados,
+.entregues {
+	border: 1px solid var(--grey-light);
+	border-radius: 8px;
+	padding: 20px;
+}
+
+.status h2 {
+	margin-bottom: 1rem;
+}

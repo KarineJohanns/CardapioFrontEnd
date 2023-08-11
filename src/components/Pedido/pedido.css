@@ -1,0 +1,28 @@
+.pedidoCard {
+	border: 1px solid var(--grey-light);
+	border-radius: 8px;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 120px;
+	padding: 1rem;
+}
+.pedidoCard h1 {
+	color: var(--green-main);
+}
+.pedidoCardData > * {
+	padding-bottom: 1rem;
+}
+
+.pedidoCardData p {
+	font-size: 1.2rem;
+}
+.addressDelivery {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.addressDelivery .icon {
+	color: var(--green-main);
+}

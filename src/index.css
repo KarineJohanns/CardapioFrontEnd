@@ -1,3 +1,13 @@
+:root {
+	--green-main: #01aa13;
+	--grey-medium: #8a8a8a;
+	--grey-light: #ccc;
+	--white: #ffffff;
+	--shadow-black: rgba(0, 0, 0, 0.2);
+	--shadow-green: rgba(1, 170, 19, 0.3);
+	--backgrownd-modal: rgba(0, 0, 0, 0.5);
+}
+
 * {
 	margin: 0;
 	padding: 0;
