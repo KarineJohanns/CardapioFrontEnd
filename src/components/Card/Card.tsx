@@ -1,7 +1,23 @@
 import Button from '../Button/Button';
 import './card.css';
 
-function Card() {
+interface ProdutoData {
+	id: number;
+	nome: string;
+	descricao: string;
+	precoEmCentavos: string;
+	nomeCategoria: string;
+	onDelete(id: number): void;
+}
+
+const Card = ({
+	id,
+	nome,
+	descricao,
+	precoEmCentavos,
+	nomeCategoria,
+	onDelete,
+}: ProdutoData) => {
 	return (
 		<>
 			<div className='card'>
@@ -13,25 +29,24 @@ function Card() {
 				</div>
 				<div className='cardInformation'>
 					<div className='information'>
-						<h4 className='title'>Macarrão</h4>
+						<h4 className='title'>{nome}</h4>
 						<h4 className='price'>
-							<span>R$35,00</span>
+							<span>R${precoEmCentavos}</span>
 						</h4>
 					</div>
-					<p className='description'>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quae
-						vel possimus? Recusandae atque velit saepe, laudantium pariatur,
-						omnis quidem veritatis deleniti beatae dolorum molestiae, doloremque
-						harum consequuntur ratione odio.
-					</p>
+					<p className='description'>{descricao}</p>
 					<div className='buttons'>
-						<Button customClassName='btnCard'>Editar</Button>
-						<Button customClassName='btnCard'>Apagar</Button>
+						<Button customClassName='btnCard' text={'Editar'} />
+						<Button
+							customClassName='btnCard'
+							text={'Apagar'}
+							onClick={() => onDelete(id)}
+						/>
 					</div>
 				</div>
 			</div>
 		</>
 	);
-}
+};
 
 export default Card;

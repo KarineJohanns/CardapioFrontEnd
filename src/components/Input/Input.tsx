@@ -2,18 +2,30 @@ import React from 'react';
 import './input.css';
 
 interface InputProps {
-	label: string;
+	label: string | number;
 	className?: string;
-	value?: string;
+	value?: string | number;
+	updateValue(value: any): void;
 }
 
-const Input: React.FC<InputProps> = ({ label, className, value, ...rest }) => {
+const Input: React.FC<InputProps> = ({
+	label,
+	className,
+	value,
+	updateValue,
+	...rest
+}) => {
 	const inputClassName = `custom-input ${className || ''}`;
 
 	return (
 		<div className='input-container'>
 			<label>{label}</label>
-			<input className={inputClassName} value={value} {...rest} />
+			<input
+				className={inputClassName}
+				value={value}
+				onChange={(event) => updateValue(event.target.value)}
+				{...rest}
+			/>
 		</div>
 	);
 };

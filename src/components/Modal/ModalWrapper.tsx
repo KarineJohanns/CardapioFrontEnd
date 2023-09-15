@@ -17,7 +17,7 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({ children, onClose }) => {
 		<div className='modal-overlay' onClick={onClose}>
 			<div className='modal-content' onClick={handleModalClick}>
 				<div className='modalTitle'>
-					<h2>Modal Título</h2>
+					<h2>Produto</h2>
 					<Button className='close-button' onClick={onClose}>
 						X
 					</Button>

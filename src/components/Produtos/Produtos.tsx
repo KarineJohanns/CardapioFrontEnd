@@ -2,8 +2,10 @@ import { useState } from 'react';
 import Categoria from '../Categoria/Categoria';
 import Button from '../Button/Button';
 import Modal from '../Modal/Modal';
+import { useCategoriaData } from '../../hooks/useCategoriaData';
 
 const Produtos = () => {
+	const { data } = useCategoriaData();
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	const handleOpenModal = () => {
@@ -12,13 +14,18 @@ const Produtos = () => {
 	return (
 		<>
 			<div>
-				<Categoria />
-				<Categoria />
-				<Categoria />
+				{data?.map((categoriaData) => (
+					<Categoria
+						key={categoriaData.nomeCategoria}
+						nome={categoriaData.nomeCategoria}
+					/>
+				))}
 			</div>
-			<Button className='btnNew' onClick={() => handleOpenModal()}>
-				Novo
-			</Button>
+			<Button
+				className='btnNew'
+				onClick={() => handleOpenModal()}
+				text='Novo'
+			/>
 			{isModalOpen && <Modal onClose={handleOpenModal} />}
 		</>
 	);

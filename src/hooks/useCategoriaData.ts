@@ -1,0 +1,24 @@
+import { categoriaData } from '../interface/CategoriaData';
+import { useQuery } from '@tanstack/react-query';
+import axios, { AxiosPromise } from 'axios';
+
+const API_URL = 'http://localhost:8080';
+
+const fetchData = async (): AxiosPromise<categoriaData[]> => {
+	const response = axios.get(API_URL + '/categorias');
+
+	return response;
+};
+
+export function useCategoriaData() {
+	const query = useQuery({
+		queryFn: fetchData,
+		queryKey: ['categoria-data'],
+		retry: 2,
+	});
+
+	return {
+		...query,
+		data: query.data?.data,
+	};
+}
