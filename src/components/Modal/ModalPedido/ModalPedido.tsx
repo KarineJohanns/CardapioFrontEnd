@@ -1,8 +1,8 @@
 import React from 'react';
 import './modalPedido.css';
-import Button from '../Button/Button';
+import Button from '../../Button/Button';
 import { useState, useRef } from 'react';
-import ModalWrapper from './ModalWrapper';
+import ModalWrapper from '../ModalWrapper/ModalWrapper';
 import { BiSolidUser, BiSolidPhone } from 'react-icons/bi';
 import { PiMotorcycleBold, PiPrinterFill } from 'react-icons/pi';
 import { MdLocationPin } from 'react-icons/md';

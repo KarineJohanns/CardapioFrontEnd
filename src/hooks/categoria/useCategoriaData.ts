@@ -1,4 +1,4 @@
-import { categoriaData } from '../interface/CategoriaData';
+import { categoriaData } from '../../interface/CategoriaData';
 import { useQuery, useMutation } from '@tanstack/react-query';
 import axios, { AxiosPromise } from 'axios';
 

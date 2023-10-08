@@ -1,6 +1,6 @@
 import './modalWrapper.css';
 import React, { ReactNode } from 'react';
-import Button from '../Button/Button';
+import Button from '../../Button/Button';
 
 interface ModalWrapperProps {
 	children: ReactNode;
@@ -17,7 +17,7 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({ children, onClose }) => {
 		<div className='modal-overlay' onClick={onClose}>
 			<div className='modal-content' onClick={handleModalClick}>
 				<div className='modalTitle'>
-					<h2>Produto</h2>
+					<h2></h2>
 					<Button className='close-button' onClick={onClose} text={'X'} />
 				</div>
 				{children}

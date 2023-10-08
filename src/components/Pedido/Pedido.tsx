@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './pedido.css';
-import ModalPedido from '../Modal/ModalPedido';
+import ModalPedido from '../Modal/ModalPedido/ModalPedido';
 import { MdLocationPin } from 'react-icons/md';
 import { GiFullMotorcycleHelmet } from 'react-icons/gi';
 

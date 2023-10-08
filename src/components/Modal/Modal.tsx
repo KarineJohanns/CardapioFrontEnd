@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './modal.css';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
-import ModalWrapper from './ModalWrapper';
+import ModalWrapper from './ModalWrapper/ModalWrapper';
 import { produtoData } from '../../interface/ProdutoData';
-import Select from '../Input/Select';
-import { useCategoriaData } from '../../hooks/useCategoriaData';
-import { useProdutoDataMutate } from '../../hooks/UseProdutoDataMutate';
-import { useCategoriaMutate } from '../../hooks/useCategoriaMutate';
+import SelectOption from '../Input/Select';
+import { useCategoriaData } from '../../hooks/categoria/useCategoriaData';
+import { useProdutoDataMutate } from '../../hooks/produto/UseProdutoDataMutate';
+import { useCategoriaMutate } from '../../hooks/categoria/useCategoriaMutate';
 
 interface ModalProps {
 	onClose(): void;
@@ -79,9 +79,9 @@ const Modal = ({ onClose }: ModalProps) => {
 	return (
 		<ModalWrapper onClose={onClose}>
 			<div className='input-grid'>
-				<Input label='Produto' value={nome} updateValue={setNome} />
+				<Input label='Nome' value={nome} updateValue={setNome} />
 				<Input label='Preço' value={preco} updateValue={setPreco} />
-				<Select
+				<SelectOption
 					label='Categoria'
 					value={nomeCategoria}
 					data={data}

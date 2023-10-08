@@ -1,4 +1,4 @@
-import { produtoData } from '../interface/ProdutoData';
+import { produtoData } from '../../interface/ProdutoData';
 import { useQuery } from '@tanstack/react-query';
 import axios, { AxiosPromise } from 'axios';
 

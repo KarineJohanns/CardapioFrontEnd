@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Button from '../Button/Button';
-import ModalConfirmation from '../Modal/modalConfirmation';
+import ModalConfirmation from '../Modal/ModalConfirmation/modalConfirmation';
 import './card.css';
 
 interface ProdutoData {

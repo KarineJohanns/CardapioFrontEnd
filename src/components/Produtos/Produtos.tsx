@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Categoria from '../Categoria/Categoria';
 import Button from '../Button/Button';
 import Modal from '../Modal/Modal';
-import { useCategoriaData } from '../../hooks/useCategoriaData';
+import { useCategoriaData } from '../../hooks/categoria/useCategoriaData';
 
 const Produtos = () => {
 	const { data } = useCategoriaData();

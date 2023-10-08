@@ -2,8 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import Card from '../Card/Card';
 import './categoria.css';
 import { BiSolidRightArrow } from 'react-icons/bi';
-import { useCategoriaData } from '../../hooks/useCategoriaData';
-import { deleteProdutoData } from '../../hooks/UseProdutoDataMutate';
+import { useCategoriaData } from '../../hooks/categoria/useCategoriaData';
+import { deleteProdutoData } from '../../hooks/produto/UseProdutoDataMutate';
 
 interface CategoriaProps {
 	nome: string;
