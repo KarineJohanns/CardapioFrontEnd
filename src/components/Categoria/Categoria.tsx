@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Card from '../Card/Card';
 import './categoria.css';
 import { BiSolidRightArrow } from 'react-icons/bi';
@@ -10,7 +10,7 @@ interface CategoriaProps {
 }
 
 const Categoria = ({ nome }: CategoriaProps) => {
-	const { data } = useCategoriaData();
+	const { data, refetchCategoriaData } = useCategoriaData();
 	const [mostrarProdutos, setMostrarProdutos] = useState(false);
 	const produtosRef = useRef(null);
 	const [alturaProdutos, setAlturaProdutos] = useState(0);
@@ -29,11 +29,14 @@ const Categoria = ({ nome }: CategoriaProps) => {
 	const handleDeleteProduto = async (id) => {
 		try {
 			await deleteProdutoData(id);
+			refetchCategoriaData();
 		} catch (error) {
 			console.error(`Erro ao excluir o produto com o id: ${id}`, error);
 		}
-		console.log(`Excluindo o produto com o ID: ${id}`);
+
+		console.log(`Excluido o produto com o ID: ${id}`);
 	};
+	useEffect(() => {}, [data]);
 
 	return (
 		<div className='category'>

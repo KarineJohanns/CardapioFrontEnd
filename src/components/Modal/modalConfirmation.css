@@ -1,0 +1,8 @@
+.confirmation-buttons {
+	display: flex;
+}
+
+p {
+	padding: 1.6rem 0;
+	font-size: 20px;
+}

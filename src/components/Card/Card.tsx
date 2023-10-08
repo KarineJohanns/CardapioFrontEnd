@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import Button from '../Button/Button';
+import ModalConfirmation from '../Modal/modalConfirmation';
 import './card.css';
 
 interface ProdutoData {
@@ -18,6 +20,21 @@ const Card = ({
 	nomeCategoria,
 	onDelete,
 }: ProdutoData) => {
+	const [showConfirmDeleteModal, setShowConfirmDeleteModal] = useState(false);
+
+	const handleDeleteClick = () => {
+		setShowConfirmDeleteModal(true);
+	};
+
+	const handleCancelDelete = () => {
+		setShowConfirmDeleteModal(false);
+	};
+
+	const handleConfirmDelete = () => {
+		onDelete(id);
+		setShowConfirmDeleteModal(false);
+	};
+
 	return (
 		<>
 			<div className='card'>
@@ -40,11 +57,18 @@ const Card = ({
 						<Button
 							customClassName='btnCard'
 							text={'Apagar'}
-							onClick={() => onDelete(id)}
+							onClick={handleDeleteClick}
 						/>
 					</div>
 				</div>
 			</div>
+			{showConfirmDeleteModal && (
+				<ModalConfirmation
+					isOpen={showConfirmDeleteModal}
+					onCancel={handleCancelDelete}
+					onConfirm={handleConfirmDelete}
+				/>
+			)}
 		</>
 	);
 };

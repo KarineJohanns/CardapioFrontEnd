@@ -13,7 +13,6 @@ export const deleteProdutoData = async (id) => {
 	try {
 		await axios.delete(API_URL + '/produtos/' + id);
 	} catch (error) {
-		console.log(id);
 		throw error;
 	}
 };

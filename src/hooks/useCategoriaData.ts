@@ -1,5 +1,5 @@
 import { categoriaData } from '../interface/CategoriaData';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useMutation } from '@tanstack/react-query';
 import axios, { AxiosPromise } from 'axios';
 
 const API_URL = 'http://localhost:8080';
@@ -17,8 +17,18 @@ export function useCategoriaData() {
 		retry: 2,
 	});
 
+	const refetchCategoriaData = useMutation(() => fetchData(), {
+		onSuccess: () => {
+			query.refetch();
+		},
+		onError: (error) => {
+			console.error('Erro na mutação:', error);
+		},
+	});
+
 	return {
 		...query,
 		data: query.data?.data,
+		refetchCategoriaData: refetchCategoriaData.mutate,
 	};
 }

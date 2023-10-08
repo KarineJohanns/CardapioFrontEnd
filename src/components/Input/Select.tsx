@@ -33,6 +33,7 @@ const Select: React.FC<SelectProps> = ({
 				onChange={(event) => updateValue(event.target.value)}
 				{...rest}>
 				<option></option>
+				<option>Nova categoria</option>
 				{data?.map((categoriaData) => (
 					<option
 						key={categoriaData.nomeCategoria}

@@ -18,9 +18,7 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({ children, onClose }) => {
 			<div className='modal-content' onClick={handleModalClick}>
 				<div className='modalTitle'>
 					<h2>Produto</h2>
-					<Button className='close-button' onClick={onClose}>
-						X
-					</Button>
+					<Button className='close-button' onClick={onClose} text={'X'} />
 				</div>
 				{children}
 			</div>
